@@ -23,7 +23,7 @@ spring:
             - name: CircuitBreaker
               args:
                 name: movieService
-                fallbackUri: forward:/fallback/movies
+                fallbackUri: forward:/fallback/movie
         - id: avaliacao_catalog-service
           uri: http://catalog-service:8082
           predicates:
