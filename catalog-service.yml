@@ -3,24 +3,6 @@ server:
   servlet:
     context-path: /catalog/
 
-  rabbitmq:
-    username: guest
-    password: guest
-    host: rabbitmq
-    port: 5672
-
-queue:
-  movie:
-    name: MovieQueue
-
-message: Catalog up
-
-info:
-  app:
-    name: ${spring.application.name}
-    version: 1.0.0
-    description: catalog microservice
-
 spring:
   eureka:
     client:
@@ -40,6 +22,23 @@ spring:
     console:
       enabled: true
       path: /h2-console
+  rabbitmq:
+    username: guest
+    password: guest
+    host: rabbitmq
+    port: 5672
+
+queue:
+  movie:
+    name: MovieQueue
+
+message: Catalog up
+
+info:
+  app:
+    name: ${spring.application.name}
+    version: 1.0.0
+    description: catalog microservice
 
 management:
   endpoints:
