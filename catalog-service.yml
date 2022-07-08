@@ -6,8 +6,8 @@ server:
   rabbitmq:
     username: guest
     password: guest
-    host: rabbitmq-service
-    port: 15672
+    host: rabbitmq
+    port: 5672
 
 queue:
   movie:
