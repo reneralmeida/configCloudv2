@@ -6,7 +6,7 @@ server:
   rabbitmq:
     username: guest
     password: guest
-    host: localhost
+    host: rabbitmq-service
     port: 5672
 
 queue:
