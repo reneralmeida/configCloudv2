@@ -36,8 +36,8 @@ eureka:
   rabbitmq:
     username: guest
     password: guest
-    host: http://rabbitmq:5672/
-    port: 5672
+    host: rabbitmq
+    port: 15672
 
 queue:
   movie:
