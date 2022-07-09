@@ -15,7 +15,7 @@ spring:
           enabled: true
           lower-case-service-id: true
       routes:
-        - id: avaliacao_movie-service
+        - id: movie-service
           uri: http://movie-service:8081
           predicates:
             - Path=/movie/**
@@ -24,7 +24,7 @@ spring:
               args:
                 name: movieService
                 fallbackUri: forward:/fallback/movie
-        - id: avaliacao_catalog-service
+        - id: catalog-service
           uri: http://catalog-service:8082
           predicates:
             - Path=/catalog/**
