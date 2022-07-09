@@ -36,6 +36,6 @@ spring:
 
 queue:
   movie:
-    name: MovieQueue
+    name: movieQueue
 
 
