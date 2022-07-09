@@ -41,7 +41,7 @@ eureka:
 
 queue:
   movie:
-    name: MovieQueue
+    name: movieQueue
 
 message: Catalog up
 
