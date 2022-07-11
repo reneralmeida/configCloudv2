@@ -8,8 +8,20 @@ spring:
     name: movie-service
   zipkin:
     base-url: http://zipkin-service:9411/
+  config:
+    import: optional:configserver:http://config-service:8888
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    username: movie_user
+#    password: 1234
+#    url: jdbc:mysql://movie_db:3306/movie_db?createDatabaseIfNotExist=true
+#    jpa:
+#      properties.hibernate.dialect: org.hibernate.dialect.MySQLDialect
+#      hibernate.ddl-auto: update
+#      generate-ddl: true
+#      show-sql: true
   datasource:
-    url: jdbc:h2:mem:testdb
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1
     driverClassName: org.h2.Driver
     username: sa
     password: sa
@@ -27,12 +39,12 @@ spring:
 
 eureka:
   instance:
-    hostname: eureka-service
+    hostname: localhost
   client:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+      defaultZone: http://eureka-service:8761/eureka/
   rabbitmq:
     username: guest
     password: guest
@@ -41,18 +53,20 @@ eureka:
 
 queue:
   movie:
-    name: MovieQueue
+    name: movieQueue
 
 message: Movie up
 
-info:
-  app:
-    name: ${spring.application.name}
-    version: 1.0.0
-    description: movie microservice
-
 management:
+  info:
+    env:
+      enabled: true
   endpoints:
     web:
       exposure:
-        include: '*'
+        include: health,info
+
+info:
+  name: Micro serviço de filmes
+  author: Rener Almeida
+  severity: Alto
