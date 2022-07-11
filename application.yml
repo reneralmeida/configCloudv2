@@ -12,7 +12,6 @@ management:
         include: health,info 
 info:
   author: Rener Almeida
-  mail: wouldntyouliketoknow@blablabla.com
 server:
   port: ${PORT:9999}
 message: Generic
